@@ -20,4 +20,17 @@ class Array
         resarr
     end
 
+
+    def my_transpose
+        resarr = Array.new(self.length) {[]}
+        return nil if self.any? {|row| self.length != row.length}
+
+        self.each_with_index do |row, i|
+            row.each_with_index do |ele, j|
+                resarr[j] << ele 
+            end
+        end
+        resarr
+    end
+
 end

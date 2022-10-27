@@ -21,9 +21,32 @@ describe "Array" do
             arr = [-1, 0, 2, -2, 1]
             expect(arr.two_sum).to eq([[0, 4], [2, 3]])
         end
-        #[-1, 0, 2, -2, 1].two_sum # => [[0, 4], [2, 3]]
-        #[0, 2] before [2, 1] (smaller first elements come first)
-        #[0, 1] before [0, 2] (then smaller second elements come first)
+    end
+
+    describe "my_transpose" do
+        subject(:matrix) {[[0, 1, 2],[3, 4, 5],[6, 7, 8]]} 
+
+        it "converts a matrix from row-oriented to column-oriented" do
+            expect(matrix.my_transpose).to eq([[0, 3, 6],[1, 4, 7],[2, 5, 8]])
+        end
+
+        it "returns a new array" do
+            expect(matrix.my_transpose.object_id).not_to be(matrix.object_id)
+        end
+
+        it "does not call transpose" do
+            expect(matrix).not_to receive(:transpose)
+            matrix.my_transpose
+        end
+
+        it "returns nil when not a square grid" do
+            arr2 = [[0, 1, 2],[3, 4, 5]]
+            expect(arr2.my_transpose).to eq(nil)
+        end
+
+        #not the same id
+        #does not call transpose
+        #returns nil when not a square grid
     end
 
 
