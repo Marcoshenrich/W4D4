@@ -54,13 +54,14 @@ describe "Array" do
         it "returns the most profitable pair of days" do
             expect(prices.stock_picker).to eq([1,5])
         end
-        #test for expected answer [1, 5]
-        #return nil if array is empty
+
         it "returns nil if array is empty" do
             nilarr = []
             expect(nilarr.stock_picker).to eq(nil)
         end
     end
+
+    
 
 
 end
