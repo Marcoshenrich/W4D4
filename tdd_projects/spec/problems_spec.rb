@@ -49,6 +49,18 @@ describe "Array" do
         #returns nil when not a square grid
     end
 
+    describe "stock_picker" do
+        subject(:prices) { [23, 9, 41, 16, 11, 89, 2] }
+        it "returns the most profitable pair of days" do
+            expect(prices.stock_picker).to eq([1,5])
+        end
+        #test for expected answer [1, 5]
+        #return nil if array is empty
+        it "returns nil if array is empty" do
+            nilarr = []
+            expect(nilarr.stock_picker).to eq(nil)
+        end
+    end
 
 
 end
